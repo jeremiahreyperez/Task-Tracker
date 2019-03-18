@@ -23,7 +23,7 @@ class App extends Component {
     }
   }
 
-  markComplete = id => {
+  toggleComplete = id => {
     this.setState({
       todos: this.state.todos.map(todo => {
         if (todo.id === id) {
@@ -32,8 +32,8 @@ class App extends Component {
         return todo;
       })
     });
-    // const list = this.state.todos;
-    // localStorage.setItem('todos', JSON.stringify(list));
+    const list = this.state.todos;
+    localStorage.setItem('todos', JSON.stringify(list));
   };
 
   deleteTodo = id => {
@@ -47,7 +47,7 @@ class App extends Component {
   addTodo = title => {
     const newTodo = {
       id: uuid.v4(),
-      title: title,
+      title: title.charAt(0).toUpperCase() + title.slice(1),
       completed: false
     };
     const list = [...this.state.todos];
@@ -70,7 +70,7 @@ class App extends Component {
                   <AddTodo addTodo={this.addTodo} />
                   <Todos
                     todos={this.state.todos}
-                    markComplete={this.markComplete}
+                    toggleComplete={this.toggleComplete}
                     deleteTodo={this.deleteTodo}
                   />
                 </React.Fragment>
