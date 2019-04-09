@@ -64,7 +64,7 @@ class App extends Component {
             <Header />
             <Route
               exact
-              path="/"
+              path="/Task-Tracker"
               render={props => (
                 <React.Fragment>
                   <AddTodo addTodo={this.addTodo} />
