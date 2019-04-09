@@ -15,7 +15,7 @@ class TodoItem extends Component {
           onClick={this.props.deleteTodo.bind(this, this.props.todo.id)}
           style={btnStyle}
         >
-          X
+          Delete
         </button>
       </div>
     );
@@ -30,16 +30,16 @@ const todoStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   background: '#f4f4f4',
-  padding: '10px',
-  borderBottom: '1px #ccc dotted'
+  borderBottom: '1px #ccc dotted',
+  fontSize: 18
 };
 
 const btnStyle = {
+  fontSize: 18,
+  width: 100,
   background: '#ff0000',
   color: '#fff',
   border: 'none',
-  padding: '0px 10px',
-  borderRadius: '30%',
   cursor: 'pointer',
   margin: '0px'
 };

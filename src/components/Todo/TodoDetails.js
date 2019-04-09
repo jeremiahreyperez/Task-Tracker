@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class TodoDetails extends Component {
   getStyle = () => {
     return {
+      padding: '10px',
       textDecoration: this.props.todo.completed ? 'line-through' : 'none',
       opacity: this.props.todo.completed ? '.3' : '1'
     };
